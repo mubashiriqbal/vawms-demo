@@ -260,22 +260,22 @@ body { background:#f4f6f9; }
       <div class="row mb-3">
         <div class="col-md-3">
           <label>Date of Appointment</label>
-          <input type="date" class="form-control">
+          <input type="date" name="veinMapping[][date]" class="form-control">
         </div>
         <div class="col-md-3">
           <label>Time of Appointment</label>
-          <input type="time" class="form-control">
+          <input type="time" name="veinMapping[][time]" class="form-control">
         </div>
         <div class="col-md-3">
           <label>Did Patient Attend?</label>
-          <select class="form-select">
+          <select name="veinMapping[][attended]" class="form-select">
             <option>Yes</option>
             <option>No</option>
           </select>
         </div>
         <div class="col-md-3">
           <label>Appointment Status</label>
-          <select class="form-select">
+          <select name="veinMapping[][status]" class="form-select">
             <option>Scheduled</option>
             <option>Completed</option>
             <option>Cancelled</option>
@@ -287,21 +287,21 @@ body { background:#f4f6f9; }
       <div class="row mb-3">
         <div class="col-md-4">
           <label>Provider Name</label>
-          <input class="form-control">
+          <input name="veinMapping[][provider_name]" class="form-control">
         </div>
         <div class="col-md-4">
           <label>Provider Phone</label>
-          <input class="form-control">
+          <input name="veinMapping[][provider_phone]" class="form-control">
         </div>
         <div class="col-md-4">
           <label>Provider Address</label>
-          <input class="form-control">
+          <input name="veinMapping[][provider_address]" class="form-control">
         </div>
       </div>
 
       <div class="mb-3">
         <label>Comments</label>
-        <textarea class="form-control"></textarea>
+        <textarea name="veinMapping[][comments]" class="form-control"></textarea>
       </div>
 
       <div class="text-end">
@@ -343,22 +343,22 @@ body { background:#f4f6f9; }
       <div class="row mb-3">
         <div class="col-md-3">
           <label>Date of Appointment</label>
-          <input type="date" class="form-control">
+          <input type="date" name="consultation[][date]" class="form-control">
         </div>
         <div class="col-md-3">
           <label>Time of Appointment</label>
-          <input type="time" class="form-control">
+          <input type="time" name="consultation[][time]" class="form-control">
         </div>
         <div class="col-md-3">
           <label>Did Patient Attend?</label>
-          <select class="form-select">
+          <select name="consultation[][attended]" class="form-select">
             <option>Yes</option>
             <option>No</option>
           </select>
         </div>
         <div class="col-md-3">
           <label>Appointment Status</label>
-          <select class="form-select">
+          <select name="consultation[][status]" class="form-select">
             <option>Scheduled</option>
             <option>Completed</option>
             <option>Cancelled</option>
@@ -369,7 +369,7 @@ body { background:#f4f6f9; }
       <div class="row mb-3">
         <div class="col-md-3">
           <label>Outcome</label>
-          <select class="form-select">
+          <select name="consultation[][outcome]" class="form-select">
             <option>Fit</option>
             <option>Unfit</option>
           </select>
@@ -379,21 +379,21 @@ body { background:#f4f6f9; }
       <div class="row mb-3">
         <div class="col-md-4">
           <label>Provider Name</label>
-          <input class="form-control">
+          <input name="consultation[][provider_name]" class="form-control">
         </div>
         <div class="col-md-4">
           <label>Provider Phone</label>
-          <input class="form-control">
+          <input name="consultation[][provider_phone]" class="form-control">
         </div>
         <div class="col-md-4">
           <label>Provider Address</label>
-          <input class="form-control">
+          <input name="consultation[][provider_address]" class="form-control">
         </div>
       </div>
 
       <div class="mb-3">
         <label>Comments</label>
-        <textarea class="form-control"></textarea>
+        <textarea name="consultation[][comments]" class="form-control"></textarea>
       </div>
 
       <div class="text-end">
@@ -422,35 +422,35 @@ body { background:#f4f6f9; }
 <div class="card mb-4">
   <div class="card-header fw-bold d-flex justify-content-between align-items-center">
     <span>Section 5 – Surgery Phase</span>
-    <button class="btn btn-sm btn-outline-primary" onclick="addConsultation('consultationAppointments2')">
-      ➕ Add Consultation
+    <button class="btn btn-sm btn-outline-primary" onclick="addSurgery()">
+      ➕ Add Surgery
     </button>
   </div>
 
   <div class="card-body" id="consultationAppointments2">
 
-    <!-- ===== Consultation 1 ===== -->
+    <!-- ===== Surgery 1 ===== -->
     <div class="border rounded p-3 mb-3 consultation-appointment">
 
       <div class="row mb-3">
         <div class="col-md-3">
           <label>Date of Appointment</label>
-          <input type="date" class="form-control">
+          <input type="date" name="surgery[][date]" class="form-control">
         </div>
         <div class="col-md-3">
           <label>Time of Appointment</label>
-          <input type="time" class="form-control">
+          <input type="time" name="surgery[][time]" class="form-control">
         </div>
         <div class="col-md-3">
           <label>Did Patient Attend?</label>
-          <select class="form-select">
+          <select name="surgery[][attended]" class="form-select">
             <option>Yes</option>
             <option>No</option>
           </select>
         </div>
         <div class="col-md-3">
           <label>Appointment Status</label>
-          <select class="form-select">
+          <select name="surgery[][status]" class="form-select">
             <option>Scheduled</option>
             <option>Completed</option>
             <option>Cancelled</option>
@@ -461,7 +461,7 @@ body { background:#f4f6f9; }
       <div class="row mb-3">
         <div class="col-md-3">
           <label>Outcome</label>
-          <select class="form-select">
+          <select name="surgery[][outcome]" class="form-select">
             <option>Please Select</option>
             <option>Placed</option>
             <option>Not Placed</option>
@@ -472,46 +472,28 @@ body { background:#f4f6f9; }
       <div class="row mb-3">
         <div class="col-md-4">
           <label>Provider Name</label>
-          <input class="form-control">
+          <input name="surgery[][provider_name]" class="form-control">
         </div>
         <div class="col-md-4">
           <label>Provider Phone</label>
-          <input class="form-control">
+          <input name="surgery[][provider_phone]" class="form-control">
         </div>
         <div class="col-md-4">
           <label>Provider Address</label>
-          <input class="form-control">
+          <input name="surgery[][provider_address]" class="form-control">
         </div>
       </div>
 
       <div class="mb-3">
         <label>Comments</label>
-        <textarea class="form-control"></textarea>
+        <textarea name="surgery[][comments]" class="form-control"></textarea>
       </div>
 
       <div class="text-end">
-        <button class="btn btn-sm btn-outline-danger" onclick="removeConsultation(this)">
+        <button class="btn btn-sm btn-outline-danger" onclick="removeSurgery(this)">
           ➖ Remove
         </button>
       </div>
-
-    </div>
-  </div>
-
-  <div class="px-3 pb-3">
-    <button class="btn btn-danger btn-sm mb-3" onclick="refuse('Consultation')">
-      Patient Refused
-    </button>
-
-    <div class="text-end">
-      <button class="btn btn-success" onclick="saveSection(5)">
-        Save Section 5
-      </button>
-    </div>
-  </div>
-</div>
-
-<!-- ================= SECTION 6 ================= -->
 <!-- ================= SECTION 6 ================= -->
 <div class="card mb-4">
   <div class="card-header fw-bold d-flex justify-content-between align-items-center">
@@ -530,7 +512,7 @@ body { background:#f4f6f9; }
       <div class="row mb-3">
         <div class="col-md-4">
           <label class="form-label">Appointment Type</label>
-          <select class="form-select">
+          <select name="cannulation[][type]" class="form-select">
             <option>Cannulation Order</option>
             <option>Post Op</option>
             <option>Follow Up</option>
@@ -540,11 +522,11 @@ body { background:#f4f6f9; }
         </div>
         <div class="col-md-4">
           <label class="form-label">Date of Appointment</label>
-          <input type="date" class="form-control">
+          <input type="date" name="cannulation[][date]" class="form-control">
         </div>
         <div class="col-md-4">
           <label class="form-label">Time of Appointment</label>
-          <input type="time" class="form-control">
+          <input type="time" name="cannulation[][time]" class="form-control">
         </div>
       </div>
 
@@ -552,14 +534,14 @@ body { background:#f4f6f9; }
       <div class="row mb-3">
         <div class="col-md-4">
           <label class="form-label">Did Patient Attend?</label>
-          <select class="form-select">
+          <select name="cannulation[][attended]" class="form-select">
             <option>Yes</option>
             <option>No</option>
           </select>
         </div>
         <div class="col-md-4">
           <label class="form-label">Appointment Status</label>
-          <select class="form-select">
+          <select name="cannulation[][status]" class="form-select">
             <option>Scheduled</option>
             <option>Completed</option>
             <option>Cancelled</option>
@@ -569,7 +551,7 @@ body { background:#f4f6f9; }
         </div>
         <div class="col-md-4">
           <label class="form-label">Access Type</label>
-          <select class="form-select">
+          <select name="cannulation[][access_type]" class="form-select">
             <option>Please Select</option>
             <option>AVF</option>
             <option>AVG</option>
@@ -579,7 +561,7 @@ body { background:#f4f6f9; }
         </div>
         <div class="col-md-4">
           <label class="form-label">Needle Size</label>
-          <select class="form-select">
+          <select name="cannulation[][needle_size]" class="form-select">
             <option>Please Select</option>
             <option>17 mm</option>
             <option>16 mm</option>
@@ -592,22 +574,22 @@ body { background:#f4f6f9; }
       <div class="row mb-3">
         <div class="col-md-4">
           <label class="form-label">Provider Name</label>
-          <input class="form-control">
+          <input name="cannulation[][provider_name]" class="form-control">
         </div>
         <div class="col-md-4">
           <label class="form-label">Provider Phone</label>
-          <input class="form-control">
+          <input name="cannulation[][provider_phone]" class="form-control">
         </div>
         <div class="col-md-4">
           <label class="form-label">Provider Address</label>
-          <input class="form-control">
+          <input name="cannulation[][provider_address]" class="form-control">
         </div>
       </div>
 
       <!-- Row 4 -->
       <div class="mb-3">
         <label class="form-label">Comments</label>
-        <textarea class="form-control" rows="2"></textarea>
+        <textarea name="cannulation[][comments]" class="form-control" rows="2"></textarea>
       </div>
 
       <div class="text-end">
@@ -644,26 +626,26 @@ body { background:#f4f6f9; }
 
   <div class="card-body" id="catheterRemovalAppointments">
 
-    <!-- ===== Appointment 1 ===== -->
+    <!-- ===== Catheter Removal 1 ===== -->
     <div class="border rounded p-3 mb-4 cannulation-appointment">
 
       <!-- Row 1 -->
       <div class="row mb-3">
-           <div class="col-md-4">
-        <label class="form-label">Catheter Status</label>
-        <select id="catheterStatus" class="form-select">
-          <option>Pending</option>
-          <option>Scheduled</option>
-          <option>Completed</option>
-        </select>
-      </div>
+        <div class="col-md-4">
+          <label class="form-label">Catheter Status</label>
+          <select name="catheter_removal[][status]" class="form-select">
+            <option>Pending</option>
+            <option>Scheduled</option>
+            <option>Completed</option>
+          </select>
+        </div>
         <div class="col-md-4">
           <label class="form-label">Date of Appointment</label>
-          <input type="date" class="form-control">
+          <input type="date" name="catheter_removal[][date]" class="form-control">
         </div>
         <div class="col-md-4">
           <label class="form-label">Time of Appointment</label>
-          <input type="time" class="form-control">
+          <input type="time" name="catheter_removal[][time]" class="form-control">
         </div>
       </div>
 
@@ -671,7 +653,7 @@ body { background:#f4f6f9; }
       <div class="row mb-3">
         <div class="col-md-4">
           <label class="form-label">Did Patient Attend?</label>
-          <select class="form-select">
+          <select name="catheter_removal[][attended]" class="form-select">
             <option>Please Select</option>
             <option>Yes</option>
             <option>No</option>
@@ -679,9 +661,8 @@ body { background:#f4f6f9; }
         </div>
         <div class="col-md-4">
           <label class="form-label">Appointment Status</label>
-          <select class="form-select">     
-                   <option>Please Select</option>
-
+          <select name="catheter_removal[][appointment_status]" class="form-select">
+            <option>Please Select</option>
             <option>Scheduled</option>
             <option>Completed</option>
             <option>Cancelled</option>
@@ -689,54 +670,35 @@ body { background:#f4f6f9; }
             <option>No-Show</option>
           </select>
         </div>
-    
-
       </div>
 
       <!-- Row 3 -->
       <div class="row mb-3">
         <div class="col-md-4">
           <label class="form-label">Provider Name</label>
-          <input class="form-control">
+          <input name="catheter_removal[][provider_name]" class="form-control">
         </div>
         <div class="col-md-4">
           <label class="form-label">Provider Phone</label>
-          <input class="form-control">
+          <input name="catheter_removal[][provider_phone]" class="form-control">
         </div>
         <div class="col-md-4">
           <label class="form-label">Provider Address</label>
-          <input class="form-control">
+          <input name="catheter_removal[][provider_address]" class="form-control">
         </div>
       </div>
 
       <!-- Row 4 -->
       <div class="mb-3">
         <label class="form-label">Comments</label>
-        <textarea class="form-control" rows="2"></textarea>
+        <textarea name="catheter_removal[][comments]" class="form-control" rows="2"></textarea>
       </div>
 
       <div class="text-end">
-        <button class="btn btn-sm btn-outline-danger" onclick="removeCannulationAppointment(this)">
+        <button class="btn btn-sm btn-outline-danger" onclick="removeCatheterRemoval(this)">
           ➖ Remove
         </button>
       </div>
-
-    </div>
-  </div>
-
-  <!-- Footer -->
-  <div class="px-3 pb-3">
-    <button class="btn btn-danger btn-sm mb-3" onclick="refuse('Catheter Removal')">
-      Patient Refused
-    </button>
-
-    <div class="text-end">
-      <button class="btn btn-success" onclick="saveSection(7)">
-        Save Section 7
-      </button>
-    </div>
-  </div>
-</div>
 
 
 </div>
@@ -793,6 +755,8 @@ function _cloneTemplate(containerSelector, itemClass){
   const template = container.querySelector('.' + itemClass);
   if(!template) return;
   const clone = template.cloneNode(true);
+  // REMOVE ALL IDs FROM CLONES (CRITICAL: IDs must be unique in HTML)
+  clone.querySelectorAll('[id]').forEach(el => el.removeAttribute('id'));
   // clear inputs/selects/textareas
   clone.querySelectorAll('input, select, textarea').forEach(el=>{
     if(el.tagName.toLowerCase()==='select') el.selectedIndex = 0;
@@ -820,13 +784,24 @@ function removeConsultation(btn){
   if(item) item.remove();
 }
 
-function addCannulationAppointment(){
-  _cloneTemplate('#cannulationAppointments', 'cannulation-appointment');
+// Separate Surgery function (Section 5: Surgery is semantically different from Consultation)
+function addSurgery(){
+  _cloneTemplate('#consultationAppointments2', 'consultation-appointment');
 }
 
-function removeCannulationAppointment(btn){
+function removeSurgery(btn){
+  const item = btn.closest('.consultation-appointment');
+  if(item) item.remove();
+}
+
+// Separate Catheter Removal function (Section 7: different semantics)
+function removeCatheterRemoval(btn){
   const item = btn.closest('.cannulation-appointment');
   if(item) item.remove();
+}
+
+function addCannulationAppointment(){
+  _cloneTemplate('#cannulationAppointments', 'cannulation-appointment');
 }
 
 </script>
