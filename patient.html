@@ -26,6 +26,7 @@ body { background:#f4f6f9; }
 .readonly textarea {
   background:#f8f9fa;
   pointer-events:none;
+  cursor:not-allowed;
 }
 </style>
 </head>
@@ -57,42 +58,133 @@ body { background:#f4f6f9; }
 <div class="card-header fw-bold">Section 1 – Patient Personal Information</div>
 <div class="card-body">
 
+<!-- Demographics -->
 <div class="row mb-3">
-  <div class="col-md-4"><label>Name</label><input class="form-control"></div>
-  <div class="col-md-4"><label>Date of Birth</label><input type="date" class="form-control"></div>
-  <div class="col-md-4"><label>EMR Number</label><input class="form-control"></div>
+  <div class="col-md-4">
+    <label class="form-label">Name</label>
+    <input id="name" class="form-control" readonly>
+  </div>
+  <div class="col-md-4">
+    <label class="form-label">Date of Birth</label>
+    <input id="dob" type="date" class="form-control" readonly>
+  </div>
+  <div class="col-md-4">
+    <label class="form-label">EMR Number</label>
+    <input id="emr" class="form-control" readonly>
+  </div>
 </div>
 
 <div class="row mb-3">
-  <div class="col-md-4"><label>Race</label><input class="form-control"></div>
-  <div class="col-md-4"><label>Ethnicity</label><input class="form-control"></div>
-  <div class="col-md-4"><label>Admission Date</label><input type="date" class="form-control"></div>
+  <div class="col-md-4">
+    <label class="form-label">Race</label>
+    <input id="race" class="form-control" readonly>
+  </div>
+  <div class="col-md-4">
+    <label class="form-label">Ethnicity</label>
+    <input id="ethnicity" class="form-control" readonly>
+  </div>
+  <div class="col-md-4">
+    <label class="form-label">Admission Date</label>
+    <input id="admissionDate" type="date" class="form-control" readonly>
+  </div>
 </div>
 
-<label>Address</label>
-<input class="form-control mb-3">
+<div class="mb-3">
+  <label class="form-label">Complete Address</label>
+  <input id="address" class="form-control" readonly>
+</div>
 
 <div class="row mb-4">
-  <div class="col-md-3"><label>Phone</label><input class="form-control"></div>
-  <div class="col-md-3"><label>Home Cell</label><input class="form-control"></div>
-  <div class="col-md-3"><label>Work Phone</label><input class="form-control"></div>
-  <div class="col-md-3"><label>Email</label><input class="form-control"></div>
+  <div class="col-md-3"><label>Phone</label><input id="phone" class="form-control" readonly></div>
+  <div class="col-md-3"><label>Home Cell</label><input id="homeCell" class="form-control" readonly></div>
+  <div class="col-md-3"><label>Work Phone</label><input id="workPhone" class="form-control" readonly></div>
+  <div class="col-md-3"><label>Email</label><input id="email" class="form-control" readonly></div>
 </div>
 
+<!-- Primary Emergency Contact -->
 <hr>
-<h6 class="fw-bold">Emergency Contacts</h6>
+<h6 class="fw-bold">Primary Emergency Contact</h6>
 <div class="row mb-3">
-  <div class="col-md-4"><label>Name</label><input class="form-control"></div>
-  <div class="col-md-4"><label>Relationship</label><input class="form-control"></div>
-  <div class="col-md-4"><label>Phone</label><input class="form-control"></div>
+  <div class="col-md-4"><label>Name</label><input id="pName" class="form-control" readonly></div>
+  <div class="col-md-4"><label>Relationship</label><input id="pRelation" class="form-control" readonly></div>
+  <div class="col-md-4"><label>Power of Attorney</label><select id="pPoa" class="form-select" disabled><option>No</option><option>Yes</option></select></div>
+</div>
+<div class="row mb-4">
+  <div class="col-md-3"><label>Home Phone</label><input id="pHome" class="form-control" readonly></div>
+  <div class="col-md-3"><label>Cell Phone</label><input id="pCell" class="form-control" readonly></div>
+  <div class="col-md-3"><label>Work Phone</label><input id="pWork" class="form-control" readonly></div>
+  <div class="col-md-3"><label>Email</label><input id="pEmail" class="form-control" readonly></div>
 </div>
 
+<!-- Secondary Emergency Contact -->
+<hr>
+<h6 class="fw-bold">Secondary Emergency Contact</h6>
+<div class="row mb-3">
+  <div class="col-md-4"><label>Name</label><input id="sName" class="form-control" readonly></div>
+  <div class="col-md-4"><label>Relationship</label><input id="sRelation" class="form-control" readonly></div>
+  <div class="col-md-4"><label>Power of Attorney</label><select id="sPoa" class="form-select" disabled><option>No</option><option>Yes</option></select></div>
+</div>
+<div class="row mb-4">
+  <div class="col-md-3"><label>Home Phone</label><input id="sHome" class="form-control" readonly></div>
+  <div class="col-md-3"><label>Cell Phone</label><input id="sCell" class="form-control" readonly></div>
+  <div class="col-md-3"><label>Work Phone</label><input id="sWork" class="form-control" readonly></div>
+  <div class="col-md-3"><label>Email</label><input id="sEmail" class="form-control" readonly></div>
+</div>
+
+<!-- Insurance -->
 <hr>
 <h6 class="fw-bold">Insurance</h6>
 <div class="row mb-3">
-  <div class="col-md-4"><label>Insurance Company</label><input class="form-control"></div>
-  <div class="col-md-4"><label>Policy / Group</label><input class="form-control"></div>
-  <div class="col-md-4"><label>Insured ID</label><input class="form-control"></div>
+  <div class="col-md-4">
+    <label>Insurance Company</label>
+    <select id="insuranceCompany" class="form-select" disabled>
+      <option>Please Select</option>
+      <option>BCBS</option>
+      <option>Aetna</option>
+      <option>Cigna</option>
+      <option>UnitedHealthcare</option>
+      <option>Humana</option>
+      <option>Medicare</option>
+      <option>Medicaid</option>
+    </select>
+  </div>
+  <div class="col-md-4"><label>Policy / Group Name</label><input id="policyName" class="form-control" readonly></div>
+  <div class="col-md-4"><label>Primary?</label><select id="primaryInsurance" class="form-select" disabled><option>Please Select</option><option>Yes</option><option>No</option></select></div>
+</div>
+<div class="row mb-4">
+  <div class="col-md-4"><label>Insured Party</label><input id="insuredParty" class="form-control" readonly></div>
+  <div class="col-md-4"><label>Relationship</label><input id="insuredRelation" class="form-control" readonly></div>
+  <div class="col-md-4"><label>Insured ID</label><input id="insuredId" class="form-control" readonly></div>
+</div>
+<div class="mb-4">
+  <label>Insurance Notes</label>
+  <textarea id="insuranceNotes" class="form-control" readonly></textarea>
+</div>
+
+<!-- Vascular Access -->
+<hr>
+<h6 class="fw-bold">Vascular Access</h6>
+<div class="row mb-4">
+  <div class="col-md-3">
+    <label>CVC Catheter Status</label>
+    <select id="cvcStatus" class="form-select" disabled>
+      <option>Please Select</option>
+      <option>No</option>
+      <option>Yes</option>
+    </select>
+  </div>
+  <div class="col-md-3">
+    <label>Placement Date</label>
+    <input id="cvcPlacement" type="date" class="form-control" readonly>
+  </div>
+  <div class="col-md-3">
+    <label>Removal Date</label>
+    <input id="cvcRemoval" type="date" class="form-control" readonly>
+  </div>
+  <div class="col-md-3">
+    <label>Notes</label>
+    <input id="cvcNote" class="form-control" readonly>
+  </div>
 </div>
 
 </div>
@@ -100,107 +192,448 @@ body { background:#f4f6f9; }
 
 <!-- ================= SECTION 2 ================= -->
 <div class="card mb-4">
-<div class="card-header fw-bold">Section 2 – Patient Education</div>
-<div class="card-body">
+  <div class="card-header fw-bold">Section 2 – Patient Education</div>
+  <div class="card-body">
 
-<div class="row mb-3">
-  <div class="col-md-4"><label>Status</label><input class="form-control"></div>
-  <div class="col-md-4"><label>Educator</label><input class="form-control"></div>
-  <div class="col-md-4"><label>Provider</label><input class="form-control"></div>
-</div>
+    <div class="row mb-3">
+      <div class="col-md-4">
+        <label class="form-label">Education Status</label>
+        <select id="eduStatus" class="form-select" disabled>
+          <option>Please Select</option>
+          <option value="Pending">Pending</option>
+          <option value="Rescheduled">Rescheduled</option>
+        </select>
+      </div>
 
-<label>Notes</label>
-<textarea class="form-control"></textarea>
+      <div class="col-md-4">
+        <label class="form-label">Who Gave Education</label>
+        <select id="eduBy" class="form-select" disabled>
+          <option>Please Select</option>
+          <option>Social Worker</option>
+          <option>CAC</option>
+          <option>Staff</option>
+        </select>
+      </div>
 
-</div>
+      <div class="col-md-4">
+        <label class="form-label">Education Provider Name</label>
+        <input id="eduProviderName" class="form-control" placeholder="Provider Name" readonly>
+      </div>
+    </div>
+
+    <div class="row mb-3">
+      <div class="col-md-6">
+        <label class="form-label">Notes</label>
+        <input id="eduNote" class="form-control" placeholder="Education Notes" readonly>
+      </div>
+
+      <!-- Rescheduled Date (Hidden by Default) -->
+    <div class="col-md-6 d-none" id="eduRescheduleDiv">
+    <label class="form-label">Education Rescheduled Date</label>
+    <input id="eduRescheduleDate" type="date" class="form-control" readonly>
+    <small class="text-muted">Format: MM/DD/YYYY</small>
+  </div>
+    </div>
+
+  </div>
 </div>
 
 <!-- ================= SECTION 3 ================= -->
 <div class="card mb-4">
-<div class="card-header fw-bold">Section 3 – Vein Mapping</div>
-<div class="card-body">
+  <div class="card-header fw-bold">
+    <span>Section 3 – Vein Mapping</span>
+  </div>
 
-<div class="row mb-3">
-  <div class="col-md-3"><label>Date</label><input type="date" class="form-control"></div>
-  <div class="col-md-3"><label>Time</label><input type="time" class="form-control"></div>
-  <div class="col-md-3"><label>Status</label><input class="form-control"></div>
-  <div class="col-md-3"><label>Attended</label><input class="form-control"></div>
-</div>
+  <div class="card-body" id="veinAppointments">
 
-<label>Comments</label>
-<textarea class="form-control"></textarea>
+    <!-- ===== Appointment 1 ===== -->
+    <div class="border rounded p-3 mb-3 vein-appointment">
+      <div class="row mb-3">
+        <div class="col-md-3">
+          <label>Date of Appointment</label>
+          <input type="date" name="veinMapping[][date]" class="form-control" readonly>
+        </div>
+        <div class="col-md-3">
+          <label>Time of Appointment</label>
+          <input type="time" name="veinMapping[][time]" class="form-control" readonly>
+        </div>
+        <div class="col-md-3">
+          <label>Did Patient Attend?</label>
+          <select name="veinMapping[][attended]" class="form-select" disabled>
+            <option>Please Select</option>
+            <option>Yes</option>
+            <option>No</option>
+          </select>
+        </div>
+        <div class="col-md-3">
+          <label>Appointment Status</label>
+          <select name="veinMapping[][status]" class="form-select" disabled>
+            <option>Please Select</option>
+            <option>Scheduled</option>
+            <option>Completed</option>
+            <option>Cancelled</option>
+            <option>No-Show</option>
+          </select>
+        </div>
+      </div>
 
-</div>
+      <div class="row mb-3">
+        <div class="col-md-4">
+          <label>Provider Name</label>
+          <input name="veinMapping[][provider_name]" class="form-control" readonly>
+        </div>
+        <div class="col-md-4">
+          <label>Provider Phone</label>
+          <input name="veinMapping[][provider_phone]" class="form-control" readonly>
+        </div>
+        <div class="col-md-4">
+          <label>Provider Address</label>
+          <input name="veinMapping[][provider_address]" class="form-control" readonly>
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <label>Comments</label>
+        <textarea name="veinMapping[][comments]" class="form-control" readonly></textarea>
+      </div>
+    </div>
+
+  </div>
 </div>
 
 <!-- ================= SECTION 4 ================= -->
 <div class="card mb-4">
-<div class="card-header fw-bold">Section 4 – Consultation Phase</div>
-<div class="card-body">
+  <div class="card-header fw-bold">
+    <span>Section 4 – Consultation Phase</span>
+  </div>
 
-<div class="row mb-3">
-  <div class="col-md-3"><label>Date</label><input type="date" class="form-control"></div>
-  <div class="col-md-3"><label>Time</label><input type="time" class="form-control"></div>
-  <div class="col-md-3"><label>Outcome</label><input class="form-control"></div>
-  <div class="col-md-3"><label>Status</label><input class="form-control"></div>
-</div>
+  <div class="card-body" id="consultationAppointments">
 
-<label>Comments</label>
-<textarea class="form-control"></textarea>
+    <!-- ===== Consultation 1 ===== -->
+    <div class="border rounded p-3 mb-3 consultation-appointment">
 
-</div>
+      <div class="row mb-3">
+        <div class="col-md-3">
+          <label>Date of Appointment</label>
+          <input type="date" name="consultation[][date]" class="form-control" readonly>
+        </div>
+        <div class="col-md-3">
+          <label>Time of Appointment</label>
+          <input type="time" name="consultation[][time]" class="form-control" readonly>
+        </div>
+        <div class="col-md-3">
+          <label>Did Patient Attend?</label>
+          <select name="consultation[][attended]" class="form-select" disabled>
+            <option>Please Select</option>
+            <option>Yes</option>
+            <option>No</option>
+          </select>
+        </div>
+        <div class="col-md-3">
+          <label>Appointment Status</label>
+          <select name="consultation[][status]" class="form-select" disabled>
+            <option>Please Select</option>
+            <option>Scheduled</option>
+            <option>Completed</option>
+            <option>Cancelled</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="row mb-3">
+        <div class="col-md-3">
+          <label>Outcome</label>
+          <select name="consultation[][outcome]" class="form-select" disabled>
+            <option>Please Select</option>
+            <option>Fit</option>
+            <option>Unfit</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="row mb-3">
+        <div class="col-md-4">
+          <label>Provider Name</label>
+          <input name="consultation[][provider_name]" class="form-control" readonly>
+        </div>
+        <div class="col-md-4">
+          <label>Provider Phone</label>
+          <input name="consultation[][provider_phone]" class="form-control" readonly>
+        </div>
+        <div class="col-md-4">
+          <label>Provider Address</label>
+          <input name="consultation[][provider_address]" class="form-control" readonly>
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <label>Comments</label>
+        <textarea name="consultation[][comments]" class="form-control" readonly></textarea>
+      </div>
+
+    </div>
+  </div>
 </div>
 
 <!-- ================= SECTION 5 ================= -->
 <div class="card mb-4">
-<div class="card-header fw-bold">Section 5 – Surgery Phase</div>
-<div class="card-body">
+  <div class="card-header fw-bold">
+    <span>Section 5 – Surgery Phase</span>
+  </div>
 
-<div class="row mb-3">
-  <div class="col-md-3"><label>Date</label><input type="date" class="form-control"></div>
-  <div class="col-md-3"><label>Time</label><input type="time" class="form-control"></div>
-  <div class="col-md-3"><label>Outcome</label><input class="form-control"></div>
-  <div class="col-md-3"><label>Status</label><input class="form-control"></div>
-</div>
+  <div class="card-body" id="surgeryAppointments">
 
-<label>Comments</label>
-<textarea class="form-control"></textarea>
+    <!-- ===== Surgery 1 ===== -->
+    <div class="border rounded p-3 mb-3 surgery-appointment">
 
-</div>
+      <div class="row mb-3">
+        <div class="col-md-3">
+          <label>Date of Appointment</label>
+          <input type="date" name="surgery[][date]" class="form-control" readonly>
+        </div>
+        <div class="col-md-3">
+          <label>Time of Appointment</label>
+          <input type="time" name="surgery[][time]" class="form-control" readonly>
+        </div>
+        <div class="col-md-3">
+          <label>Did Patient Attend?</label>
+          <select name="surgery[][attended]" class="form-select" disabled>
+            <option>Please Select</option>
+            <option>Yes</option>
+            <option>No</option>
+          </select>
+        </div>
+        <div class="col-md-3">
+          <label>Appointment Status</label>
+          <select name="surgery[][status]" class="form-select" disabled>
+            <option>Please Select</option>
+            <option>Scheduled</option>
+            <option>Completed</option>
+            <option>Cancelled</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="row mb-3">
+        <div class="col-md-3">
+          <label>Outcome</label>
+          <select name="surgery[][outcome]" class="form-select" disabled>
+            <option>Please Select</option>
+            <option>Placed</option>
+            <option>Not Placed</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="row mb-3">
+        <div class="col-md-4">
+          <label>Provider Name</label>
+          <input name="surgery[][provider_name]" class="form-control" readonly>
+        </div>
+        <div class="col-md-4">
+          <label>Provider Phone</label>
+          <input name="surgery[][provider_phone]" class="form-control" readonly>
+        </div>
+        <div class="col-md-4">
+          <label>Provider Address</label>
+          <input name="surgery[][provider_address]" class="form-control" readonly>
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <label>Comments</label>
+        <textarea name="surgery[][comments]" class="form-control" readonly></textarea>
+      </div>
+
+    </div>
+  </div>
 </div>
 
 <!-- ================= SECTION 6 ================= -->
 <div class="card mb-4">
-<div class="card-header fw-bold">Section 6 – Maturing & Cannulation</div>
-<div class="card-body">
+  <div class="card-header fw-bold">
+    <span>Section 6 – Maturing and Cannulation Phase</span>
+  </div>
 
-<div class="row mb-3">
-  <div class="col-md-4"><label>Appointment Type</label><input class="form-control"></div>
-  <div class="col-md-4"><label>Access Type</label><input class="form-control"></div>
-  <div class="col-md-4"><label>Needle Size</label><input class="form-control"></div>
-</div>
+  <div class="card-body" id="cannulationAppointments">
 
-<label>Comments</label>
-<textarea class="form-control"></textarea>
+    <!-- ===== Appointment 1 ===== -->
+    <div class="border rounded p-3 mb-4 cannulation-appointment">
 
-</div>
+      <!-- Row 1 -->
+      <div class="row mb-3">
+        <div class="col-md-4">
+          <label class="form-label">Appointment Type</label>
+          <select name="cannulation[][type]" class="form-select" disabled>
+            <option>Please Select</option>
+            <option>Cannulation Order</option>
+            <option>Post Op</option>
+            <option>Follow Up</option>
+            <option>Fistulagram</option>
+            <option>Revision Surgery</option>
+          </select>
+        </div>
+        <div class="col-md-4">
+          <label class="form-label">Date of Appointment</label>
+          <input type="date" name="cannulation[][date]" class="form-control" readonly>
+        </div>
+        <div class="col-md-4">
+          <label class="form-label">Time of Appointment</label>
+          <input type="time" name="cannulation[][time]" class="form-control" readonly>
+        </div>
+      </div>
+
+      <!-- Row 2 -->
+      <div class="row mb-3">
+        <div class="col-md-4">
+          <label class="form-label">Did Patient Attend?</label>
+          <select name="cannulation[][attended]" class="form-select" disabled>
+            <option>Please Select</option>
+            <option>Yes</option>
+            <option>No</option>
+          </select>
+        </div>
+        <div class="col-md-4">
+          <label class="form-label">Appointment Status</label>
+          <select name="cannulation[][status]" class="form-select" disabled>
+            <option>Please Select</option>
+            <option>Scheduled</option>
+            <option>Completed</option>
+            <option>Cancelled</option>
+            <option>Rescheduled</option>
+            <option>No-Show</option>
+          </select>
+        </div>
+        <div class="col-md-4">
+          <label class="form-label">Access Type</label>
+          <select name="cannulation[][access_type]" class="form-select" disabled>
+            <option>Please Select</option>
+            <option>AVF</option>
+            <option>AVG</option>
+            <option>CVC</option>
+            <option>Ellipsys</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Row 3 -->
+      <div class="row mb-3">
+        <div class="col-md-4">
+          <label class="form-label">Needle Size</label>
+          <select name="cannulation[][needle_size]" class="form-select" disabled>
+            <option>Please Select</option>
+            <option>17 mm</option>
+            <option>16 mm</option>
+            <option>15 mm</option>
+          </select>
+        </div>
+        <div class="col-md-4">
+          <label class="form-label">Provider Name</label>
+          <input name="cannulation[][provider_name]" class="form-control" readonly>
+        </div>
+        <div class="col-md-4">
+          <label class="form-label">Provider Phone</label>
+          <input name="cannulation[][provider_phone]" class="form-control" readonly>
+        </div>
+      </div>
+
+      <!-- Row 4 -->
+      <div class="row mb-3">
+        <div class="col-md-12">
+          <label class="form-label">Provider Address</label>
+          <input name="cannulation[][provider_address]" class="form-control" readonly>
+        </div>
+      </div>
+
+      <!-- Row 5 -->
+      <div class="mb-3">
+        <label class="form-label">Comments</label>
+        <textarea name="cannulation[][comments]" class="form-control" rows="2" readonly></textarea>
+      </div>
+
+    </div>
+  </div>
 </div>
 
 <!-- ================= SECTION 7 ================= -->
 <div class="card mb-4">
-<div class="card-header fw-bold">Section 7 – Catheter Removal</div>
-<div class="card-body">
+  <div class="card-header fw-bold">
+    Section 7 – Catheter Removal
+  </div>
 
-<div class="row mb-3">
-  <div class="col-md-4"><label>Status</label><input class="form-control"></div>
-  <div class="col-md-4"><label>Date</label><input type="date" class="form-control"></div>
-  <div class="col-md-4"><label>Time</label><input type="time" class="form-control"></div>
-</div>
+  <div class="card-body" id="catheterRemovalAppointments">
 
-<label>Comments</label>
-<textarea class="form-control"></textarea>
+    <!-- ===== Catheter Removal 1 ===== -->
+    <div class="border rounded p-3 mb-4 catheter-removal-appointment">
 
-</div>
+      <!-- Row 1 -->
+      <div class="row mb-3">
+        <div class="col-md-4">
+          <label class="form-label">Catheter Status</label>
+          <select name="catheter_removal[][status]" class="form-select" disabled>
+            <option>Please Select</option>
+            <option>Pending</option>
+            <option>Scheduled</option>
+            <option>Completed</option>
+          </select>
+        </div>
+        <div class="col-md-4">
+          <label class="form-label">Date of Appointment</label>
+          <input type="date" name="catheter_removal[][date]" class="form-control" readonly>
+        </div>
+        <div class="col-md-4">
+          <label class="form-label">Time of Appointment</label>
+          <input type="time" name="catheter_removal[][time]" class="form-control" readonly>
+        </div>
+      </div>
+
+      <!-- Row 2 -->
+      <div class="row mb-3">
+        <div class="col-md-4">
+          <label class="form-label">Did Patient Attend?</label>
+          <select name="catheter_removal[][attended]" class="form-select" disabled>
+            <option>Please Select</option>
+            <option>Yes</option>
+            <option>No</option>
+          </select>
+        </div>
+        <div class="col-md-4">
+          <label class="form-label">Appointment Status</label>
+          <select name="catheter_removal[][appointment_status]" class="form-select" disabled>
+            <option>Please Select</option>
+            <option>Scheduled</option>
+            <option>Completed</option>
+            <option>Cancelled</option>
+            <option>Rescheduled</option>
+            <option>No-Show</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Row 3 -->
+      <div class="row mb-3">
+        <div class="col-md-4">
+          <label class="form-label">Provider Name</label>
+          <input name="catheter_removal[][provider_name]" class="form-control" readonly>
+        </div>
+        <div class="col-md-4">
+          <label class="form-label">Provider Phone</label>
+          <input name="catheter_removal[][provider_phone]" class="form-control" readonly>
+        </div>
+        <div class="col-md-4">
+          <label class="form-label">Provider Address</label>
+          <input name="catheter_removal[][provider_address]" class="form-control" readonly>
+        </div>
+      </div>
+
+      <!-- Row 4 -->
+      <div class="mb-3">
+        <label class="form-label">Comments</label>
+        <textarea name="catheter_removal[][comments]" class="form-control" rows="2" readonly></textarea>
+      </div>
+
+    </div>
+  </div>
 </div>
 
 </div>
