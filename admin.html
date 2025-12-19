@@ -11,7 +11,7 @@ body { background:#f4f6f9; }
 .timeline span {
   flex:1;
   text-align:center;
-  padding:8px;
+  padding:5px;
   border-bottom:4px solid #dee2e6;
   color:#6c757d;
   font-weight:600;
@@ -667,20 +667,7 @@ body { background:#f4f6f9; }
             <option>Completed</option>
           </select>
         </div>
-        <div class="col-md-4">
-          <label class="form-label">Date of Appointment</label>
-          <input type="date" name="catheter_removal[][date]" class="form-control">
-        </div>
-        <div class="col-md-4">
-          <label class="form-label">Time of Appointment</label>
-          <input type="time" name="catheter_removal[][time]" class="form-control">
-        </div>
-      </div>
-
-   
-      <!-- Row 2 -->
-      <div class="row mb-3">
-           <div class="col-md-4">
+            <div class="col-md-4">
           <label class="form-label">Needle Size</label>
           <select name="cannulation[][needle_size]" class="form-select">
             <option>Please Select</option>
@@ -693,7 +680,21 @@ body { background:#f4f6f9; }
             <option>1Needle:1Lumen</option>
           </select>
         </div>
+        <div class="col-md-4">
+          <label class="form-label">Date of Appointment</label>
+          <input type="date" name="catheter_removal[][date]" class="form-control">
+        </div>
+    
+      </div>
 
+   
+      <!-- Row 2 -->
+      <div class="row mb-3">
+       
+    <div class="col-md-4">
+          <label class="form-label">Time of Appointment</label>
+          <input type="time" name="catheter_removal[][time]" class="form-control">
+        </div>
         <div class="col-md-4">
           <label class="form-label">Did Patient Attend?</label>
           <select name="catheter_removal[][attended]" class="form-select">
