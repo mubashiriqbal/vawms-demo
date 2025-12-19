@@ -42,8 +42,8 @@ body { background:#f4f6f9; }
     <span id="step3">Vein Mapping</span>
     <span id="step4">Consultation</span>
     <span id="step5">Surgery</span>
-    <span id="step6">Maturing / Cannulation</span>
-    <span id="step7">Catheter Removal</span>
+    <span id="step6">Maturing </span>
+    <span id="step7">Cannulation / Catheter Removal</span>
   </div>
 </div>
 
@@ -529,7 +529,7 @@ body { background:#f4f6f9; }
 <!-- ================= SECTION 6 ================= -->
 <div class="card mb-4">
   <div class="card-header fw-bold d-flex justify-content-between align-items-center">
-    <span>Section 6 – Maturing and Cannulation Phase</span>
+    <span>Section 6 – Maturing</span>
     <button class="btn btn-sm btn-outline-primary" onclick="addCannulationAppointment()">
       ➕ Add Appointment
     </button>
@@ -594,15 +594,7 @@ body { background:#f4f6f9; }
             <option>Ellipsys</option>
           </select>
         </div>
-        <div class="col-md-4">
-          <label class="form-label">Needle Size</label>
-          <select name="cannulation[][needle_size]" class="form-select">
-            <option>Please Select</option>
-            <option>17 mm</option>
-            <option>16 mm</option>
-            <option>15 mm</option>
-          </select>
-        </div>
+        
       </div>
 
       <!-- Row 3 -->
@@ -655,7 +647,7 @@ body { background:#f4f6f9; }
 <!-- ================= SECTION 7 ================= -->
 <div class="card mb-4">
   <div class="card-header fw-bold">
-    Section 7 – Catheter Removal
+    Section 7 – Cannulation and Catheter Removal Phase
   </div>
 
 
@@ -685,8 +677,23 @@ body { background:#f4f6f9; }
         </div>
       </div>
 
+   
       <!-- Row 2 -->
       <div class="row mb-3">
+           <div class="col-md-4">
+          <label class="form-label">Needle Size</label>
+          <select name="cannulation[][needle_size]" class="form-select">
+            <option>Please Select</option>
+            <option>17 g 1 Needle</option>
+            <option>17 g 2 Needle</option>
+            <option>16 g 1 Needle</option>
+            <option>16 g 2 Needle</option>
+            <option>15 g 1 Needle</option>
+            <option>15 g 2 Needle</option>
+            <option>1Needle:1Lumen</option>
+          </select>
+        </div>
+
         <div class="col-md-4">
           <label class="form-label">Did Patient Attend?</label>
           <select name="catheter_removal[][attended]" class="form-select">
